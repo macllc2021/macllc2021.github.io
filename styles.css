@@ -1,0 +1,240 @@
+/* Header */
+@import url('https://fonts.googleapis.com/css?family=Bilbo|Carattere|Cinzel');
+html,body{
+  margin:0;
+  height:120%;
+  font-family: 'Cinzel';
+  color: white;
+}
+a{
+  text-decoration:none
+}
+.header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:50vw;
+  min-height:400px;
+  max-height:550px;
+  min-width:300px;
+  color:rgb(213, 209, 215);
+  border-radius: 0 0 85% 85% / 30%;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:200%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); backface-visibility: hidden;
+  scale: (1.0, 1.0);
+    transform: translateZ(0);
+  background: url("./site_images/woods.jpg") 100% no-repeat;
+  background-size:100%;
+  background-attachment:fixed;
+  animation: grow 360s  linear 10ms infinite;
+  transition:all 0.4s ease-in-out;
+  z-index:-2
+}
+.header a{
+  color:#eee
+}
+.header h1{
+  font-size: 10vh;
+  font-family: 'Carattere';
+
+}
+.logo{
+  background-color:rgba(27,32,48,1);
+  border:2px solid #fff;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  align-content:center;
+  margin:20px;
+  padding:0px 10px;
+  font-weight:900;
+  font-size:2vh;
+  line-height:1;
+  box-sizing:border-box;
+  height:70px;
+  position: fixed;
+  font-family: 'Cinzel';
+  color:#eee
+}
+.sides{
+  flex: 0 0 auto;
+  width:50%;
+}
+@keyframes grow{
+  0% { transform: scale(1) translateY(0px)}
+  50% { transform: scale(1.2) translateY(-400px)}
+}
+.content{  
+  padding:5% 10%;
+  text-align:justify
+}
+
+/* Art Gallery */
+body{
+  background-color:rgba(27,32,48,1);
+  font-family: 'Cinzel';
+}
+.carousel-cell{
+  display: flex;
+  justify-content: center;
+}
+
+/* Bottom */
+.bottom{
+  text-align: center;
+}
+.bottom p{
+  font-size: .5vh;
+  text-align: center;
+}
+
+/* Social */
+.menuToggle
+{
+    background-color:rgba(27,32,48,1);
+    border:2px solid #fff;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    align-content:center;
+    margin:20px;
+    padding:0px 10px;
+    font-weight:900;
+    font-size:2vh;
+    line-height:1;
+    box-sizing:border-box;
+    height:70px;
+    position: fixed;
+    right:20px;
+    text-decoration:none 
+}
+.menuToggle::before
+{
+    content: 'Social';
+    background-color:rgba(27,32,48,1);
+    border:2px solid #fff;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    align-content:center;
+    margin:20px;
+    padding:0px 10px;
+    font-weight:900;
+    font-size:2vh;
+    line-height:1;
+    box-sizing:border-box;
+    height:70px;
+    position: fixed;
+    right:20px;
+    text-decoration:none  
+}
+.menuToggle.active::before
+{
+    transform: rotate(360deg);
+}
+.menu
+{
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 70px;
+    z-index: -1;
+    transition: transform 0.5s, width 0.5s, height 0.5s;
+    transition-delay: 1s, 0.5s, 0.5s;
+    transition-timing-function: cubic-bezier(0.075,0.82, 0.165, 1);
+}
+.menuToggle.active ~ .menu
+{
+    width: 240px;
+    height: 70px;
+    z-index: 1;
+    transform: translateX(-10vw);
+    transition-delay: 0s, 0.5s, 0.5s;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+.menu::before
+{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    left: calc(50% - 8px);
+    top: 11px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    transition: 0.5s;
+}
+.menuToggle.active ~ .menu::before
+{
+    transition-delay: 0.5s;
+    left: 228px;
+    top: 25px;
+}
+.menu ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 70px;
+    gap: 40px;
+    padding: 0;
+}
+.menu ul li
+{
+    list-style: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: 0.25s;
+    transition-delay: calc(0s + var(--i));
+}
+.menuToggle.active ~ .menu ul li
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: calc(0.75s + var(--i));
+}
+.menu ul li a
+{
+    display: block;
+    font-size: 2em;
+    text-decoration: none;
+    color: #555;
+}
+.menu ul li a:hover
+{
+    color: #4298fa !important;
+    cursor: pointer;
+}

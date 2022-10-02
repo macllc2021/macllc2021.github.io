@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lan="en">
+<meta name="viewport", intial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<title>ANON ART</title>
+<div class="header">
+	<div class="sides">
+		<button class="logo" id="checkout">Store</button>
+		<script>
+			var stripe = Stripe( // Stripe Account Required
+				"pk_test_51L1JpFDA2X1BhhFp4ys8N445XgEW0uS3hbnVIO2PnSB3jTtYqVtzV5wgR74cI7MK5RR7SKxJqVT9AmAMuVXMGNZQ00ItKUrs9o"
+			);
+			document.getElementById("checkout").addEventListener("click", function(){
+				stripe.redirectToCheckout({
+					lineItems: [
+						{
+							price: "price_1LoVAyDA2X1BhhFpVJvZv2Yz",
+							quantity: 1,
+						},
+						/*{
+							price: "price_1LoVQFDA2X1BhhFpWMLPd2Xm",
+							quantity: 1,
+						}*/
+					],
+					mode: "payment",
+					successUrl: "https://www.google.com/",
+					cancelUrl: "https://www.twitter.com/",
+				})
+				.then(function(result){
+				});
+			})
+		</script>
+	</div>
+	<div class="sides">
+		<div class="menuToggle"></div>
+			<div class="menu">
+				<ul>
+					<li style="--i:0.1s;"><a href="https://www.tiktok.com/@anonacrylic"><i class="fi fi-brands-tik-tok"></i></a></li>
+					<li style="--i:0.3s;"><a href="https://twitter.com/anonacrylic"><i class="fi fi-brands-twitter"></i></a></li>
+				</ul>
+			</div>
+
+	</div>
+	<h1>Anon Art</h1>
+</div>
+
+
+<script>
+        let menuToggle = document.querySelector('.menuToggle');
+        menuToggle.onclick=function(){
+            menuToggle.classList.toggle('active')
+        }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLWL5N9CSM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LLWL5N9CSM');
+</script>
+<section class="content">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
+</section>
+<div>
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+		<div class="carousel-cell"><img src="./art_images/IMG_2569.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_2701.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_2732.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_2891.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_3342.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_3486.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_3487.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_3532.jpeg" width="80%" height=70%></div>
+		<div class="carousel-cell"><img src="./art_images/IMG_3611.jpg" width="80%" height=70%></div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="bottom">
+	<p>Website Built By</p>
+	<a href="http://www.merwedeconsulting.com"><img src="./site_images/Merwede Logo White.svg" width="15%"></a>
+</div>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+
+</html>
